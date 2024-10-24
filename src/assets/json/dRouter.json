@@ -289,6 +289,14 @@
           ]
         },
         {
+          "path": "/systemManage/user",
+          "name": "systemManageUser",
+          "component": "/systemManage/user/index",
+          "meta": {
+            "title": "用户管理"
+          }
+        },
+        {
           "path": "/systemManage/role",
           "name": "systemManageRole",
           "component": "/systemManage/role/index",
