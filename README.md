@@ -1,8 +1,8 @@
-## Ep-Admin
+## pear-ep-admin
 
 ## 简介
 
-`Ep-Admin` 是一款开源免费的中后台管理系统模版, 使用最新的 `Vue3`、`Vite`、`Ts`、`element-plus`、`Pinia`、`tailwindcss` 等主流技术开发
+`pear-ep-admin` 是一款开源免费的中后台管理系统模版, 使用最新的 `Vue3`、`Vite`、`Ts`、`element-plus`、`Pinia`、`tailwindcss` 等主流技术开发
 
 #### 在线预览地址
 
@@ -20,11 +20,11 @@
 
 - 正在开发中...
 <p align="center">
-  <img alt="Ep-Admin" width="100%" src="https://github.com/zhangzy56/V-Admin/blob/master/src/assets/readme/admin-1.png">
-  <img alt="Ep-Admin" width="100%" src="https://github.com/zhangzy56/V-Admin/blob/master/src/assets/readme/admin-2.png">
-  <img alt="Ep-Admin" width="100%" src="https://github.com/zhangzy56/V-Admin/blob/master/src/assets/readme/admin-3.png">
-  <img alt="Ep-Admin" width="100%" src="https://github.com/zhangzy56/V-Admin/blob/master/src/assets/readme/admin-4.png">
-  <img alt="Ep-Admin" width="100%" src="https://github.com/zhangzy56/V-Admin/blob/master/src/assets/readme/admin-5.png">
+  <img alt="pear-ep-admin" width="100%" src="https://github.com/pear-ep-admin/blob/master/src/assets/readme/admin-1.png">
+  <img alt="pear-ep-admin" width="100%" src="https://github.com/pear-ep-admin/blob/master/src/assets/readme/admin-2.png">
+  <img alt="pear-ep-admin" width="100%" src="https://github.com/pear-ep-admin/blob/master/src/assets/readme/admin-3.png">
+  <img alt="pear-ep-admin" width="100%" src="https://github.com/pear-ep-admin/blob/master/src/assets/readme/admin-4.png">
+  <img alt="pear-ep-admin" width="100%" src="https://github.com/pear-ep-admin/blob/master/src/assets/readme/admin-5.png">
 </p> -->
 
 ## 安装使用
@@ -32,13 +32,13 @@
 - 获取项目代码
 
 ```
-git clone git@github.com:v-geek/EP-Admin.git
+git clone git@github.com:pear1958/pear-ep-admin.git
 ```
 
 - 安装依赖
 
 ```
-cd Ep-Admin
+cd pear-ep-admin
 pnpm install
 ```
 
