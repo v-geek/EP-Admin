@@ -97,7 +97,8 @@ router.beforeEach(async (to, from, next) => {
   NProgress.start()
 
   // 动态设置标题
-  document.title = to.meta.title ? `${to.meta.title} - Ep-Admin` : 'Ep-Admin'
+  const title = import.meta.env.VITE_TITLE
+  document.title = to.meta.title ? `${to.meta.title} - ${title}` : title
 
   if (useSystemStore().enableMainLoading) {
     useSystemStore().setMainLoading(true)

@@ -1,12 +1,7 @@
 import { type ConfigEnv, type UserConfigExport, loadEnv } from 'vite'
 import { resolve } from 'path'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import svgLoader from 'vite-svg-loader'
-import viteCompression from 'vite-plugin-compression'
 import { formatEnv } from './src/utils/env'
-import { viteBuildInfo } from './build/info'
+import { getPlugins } from './build/plugins'
 import { include, exclude } from './build/optimize'
 
 const pathSrc = resolve(__dirname, 'src')
@@ -18,7 +13,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
 
   // 获取当前运行模式的环境变量对象, Val 是字符串, 因此需要处理一下
   // 直接使用 import.meta.env 来获取环境变量的话, 可以在Vue文件中获取(也有数据类型的问题), 但是无法在此文件中获取
-  const envConf = formatEnv(env)
+  const viteEnv = formatEnv(env)
 
   return {
     base: './',
@@ -30,17 +25,12 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
     server: {
       open: true, // 自动开启窗口
       host: true, // 监听本地所有IP
-      port: envConf.VITE_PORT,
+      port: viteEnv.VITE_PORT,
       proxy: {
-        // [env.VITE_API_BASE_URL]: {
-        //   target: env.VITE_PROXY_URL,
-        //   changeOrigin: true,
-        //   rewrite: path => path.replace(env.VITE_API_BASE_URL, '')
-        // },
-        '/api': {
-          target: 'https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e',
+        [env.VITE_BASE_URL]: {
+          target: env.VITE_PROXY_URL,
           changeOrigin: true,
-          rewrite: path => path.replace('/api', '')
+          rewrite: path => path.replace(env.VITE_BASE_URL, '')
         }
       },
       // 预热文件以提前转换和缓存结果，降低启动期间的初始页面加载时长并防止转换瀑布
@@ -60,26 +50,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
         }
       }
     },
-    plugins: [
-      vue(),
-      vueJsx(),
-      // 使用 svg 图标
-      createSvgIconsPlugin({
-        iconDirs: [resolve(process.cwd(), 'src/assets/svg')],
-        symbolId: 'icon-[dir]-[name]'
-      }),
-      // 加载SVG文件作为Vue组件
-      svgLoader(),
-      viteBuildInfo(),
-      // 优化 首屏加载慢 等用户体验, 配置 Nginx 即可
-      envConf.VITE_OPEN_GZIP &&
-        viteCompression({
-          deleteOriginFile: false, // 压缩后是否删除源文件
-          threshold: 10240, // 体积大于 threshold 才会被压缩, 单位b  10kb
-          algorithm: 'gzip', // 压缩算法
-          ext: '.gz' // 生成的压缩后缀
-        })
-    ],
+    plugins: getPlugins(viteEnv),
     // 解决 Vite 启动完之后首页加载慢的问题
     optimizeDeps: {
       include, // 启动时 预加载这些包

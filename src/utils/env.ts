@@ -1,6 +1,6 @@
 // 将属性值为 'Boolean' 和 'Number' 的进行还原 ( 属性值默认全部为String )
-export function formatEnv(envObj: Recordable) {
-  const result: Recordable = {}
+export function formatEnv(envObj: Recordable): ViteEnv {
+  const result = {}
 
   for (const [key, val] of Object.entries(envObj)) {
     let realVal = val === 'true' ? true : val === 'false' ? false : val
@@ -15,5 +15,5 @@ export function formatEnv(envObj: Recordable) {
     process.env[key] = realVal
   }
 
-  return result
+  return result as ViteEnv
 }

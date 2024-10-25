@@ -4,6 +4,14 @@ declare interface Window {
   }
 }
 
+declare interface ViteEnv {
+  VITE_PORT: number
+  VITE_OPEN_GZIP: boolean
+  VITE_TITLE: string
+  VITE_API_BASE_URL: string
+  VITE_PROXY_URL: string
+}
+
 declare interface MenuItem {
   path: string
   name: string
