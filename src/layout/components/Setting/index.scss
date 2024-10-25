@@ -50,6 +50,27 @@
     box-shadow: 0 0 0 2px var(--el-color-primary) !important;
   }
 
+  .layout-classic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .layout-dark {
+      height: 22%;
+    }
+    .layout-container {
+      display: flex;
+      justify-content: space-between;
+      height: 70%;
+      .layout-light {
+        width: 20%;
+      }
+      .layout-content {
+        width: 70%;
+      }
+    }
+  }
+
   .layout-vertical {
     display: flex;
     justify-content: space-between;

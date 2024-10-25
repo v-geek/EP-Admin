@@ -5,6 +5,7 @@
 
 <script lang="ts" setup>
 import { computed, type Component } from 'vue'
+import LayoutClassic from './LayoutClassic/index.vue'
 import LayoutVertical from './LayoutVertical/index.vue'
 import LayoutColumns from './LayoutColumns/index.vue'
 import LayoutMix from './LayoutMix/index.vue'
@@ -18,6 +19,7 @@ import useConfigStore from '@/store/modules/platformConfig'
 const layout = computed(() => useSystemStore().layout)
 
 const LayoutComponents: Recordable<Component> = {
+  classic: LayoutClassic,
   vertical: LayoutVertical,
   columns: LayoutColumns,
   mix: LayoutMix

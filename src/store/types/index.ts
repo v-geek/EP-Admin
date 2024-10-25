@@ -8,7 +8,7 @@ export interface UserInfo {
   [key: string]: any
 }
 
-export type LayoutType = 'vertical' | 'columns' | 'mix'
+export type LayoutType = 'classic' | 'vertical' | 'columns' | 'mix'
 
 export type ComponentSize = 'small' | 'default' | 'large'
 

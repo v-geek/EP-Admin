@@ -4,7 +4,23 @@
       <el-divider>布局模式</el-divider>
 
       <div class="layout-box">
-        <el-tooltip effect="dark" content="纵向菜单" placement="top" :show-after="200">
+        <el-tooltip effect="dark" content="经典" placement="top" :show-after="200">
+          <div
+            :class="['layout-item layout-classic', { 'is-active': layout == 'classic' }]"
+            @click="setLayout('classic')"
+          >
+            <div class="layout-dark"></div>
+            <div class="layout-container">
+              <div class="layout-light"></div>
+              <div class="layout-content"></div>
+            </div>
+            <el-icon v-if="layout == 'classic'">
+              <CircleCheckFilled />
+            </el-icon>
+          </div>
+        </el-tooltip>
+
+        <el-tooltip effect="dark" content="纵向" placement="top" :show-after="200">
           <div
             :class="['layout-item layout-vertical', { 'is-active': layout === 'vertical' }]"
             @click="setLayout('vertical')"
@@ -20,7 +36,7 @@
           </div>
         </el-tooltip>
 
-        <el-tooltip effect="dark" content="分栏菜单" placement="top" :show-after="200">
+        <el-tooltip effect="dark" content="分栏" placement="top" :show-after="200">
           <div
             :class="['layout-item layout-columns', { 'is-active': layout === 'columns' }]"
             @click="setLayout('columns')"
@@ -34,7 +50,7 @@
           </div>
         </el-tooltip>
 
-        <el-tooltip effect="dark" content="混合菜单" placement="top" :show-after="200">
+        <el-tooltip effect="dark" content="混合" placement="top" :show-after="200">
           <div
             :class="['layout-item layout-columns', { 'is-active': layout === 'mix' }]"
             @click="setLayout('mix')"
