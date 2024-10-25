@@ -4,9 +4,9 @@
 
 `Ep-Admin` 是一款开源免费的中后台管理系统模版, 使用最新的 `Vue3`、`Vite`、`Ts`、`element-plus`、`Pinia`、`tailwindcss` 等主流技术开发
 
-<!-- #### 在线预览地址
+#### 在线预览地址
 
-[点我预览](https://v-geek.github.io/Ep-Admin) -->
+[点我预览](https://pear1958.github.io/pear-ep-admin)
 
 #### 登录相关
 
