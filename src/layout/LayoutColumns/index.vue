@@ -62,7 +62,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref, unref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import useSystemStore from '@/store/modules/system'
@@ -82,10 +82,9 @@ const title = import.meta.env.VITE_TITLE
 const route = useRoute()
 const router = useRouter()
 const systemStore = useSystemStore()
-const permissionStore = usePermissionStore()
 
 const activePath = ref('')
-const menuList = computed(() => permissionStore.showMenuListGet)
+const menuList = computed(() => usePermissionStore().showMenuListGet)
 const subMenuList = ref<MenuList>([])
 const isCollapse = computed(() => systemStore.sideBar.isCollapse)
 
@@ -98,7 +97,7 @@ watch(
 
     activePath.value = route.path
 
-    const menuItem = menuList.value.filter((item: MenuItem) => {
+    const menuItem = unref(menuList).filter((item: MenuItem) => {
       return route.path === item.path || `/${route.path.split('/')[1]}` === item.path
     })
 

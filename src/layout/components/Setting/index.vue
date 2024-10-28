@@ -50,7 +50,7 @@
           </div>
         </el-tooltip>
 
-        <el-tooltip effect="dark" content="混合" placement="top" :show-after="200">
+        <!-- <el-tooltip effect="dark" content="混合" placement="top" :show-after="200">
           <div
             :class="['layout-item layout-columns', { 'is-active': layout === 'mix' }]"
             @click="setLayout('mix')"
@@ -62,7 +62,7 @@
               <CircleCheckFilled />
             </el-icon>
           </div>
-        </el-tooltip>
+        </el-tooltip> -->
 
         <div class="layout-item invisible"></div>
       </div>

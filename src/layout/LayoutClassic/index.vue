@@ -1,5 +1,5 @@
 <template>
-  <div>经典布局</div>
+  <div>经典布局-开发中...</div>
 </template>
 
 <script setup lang="ts">
