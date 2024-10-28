@@ -1,6 +1,6 @@
 ## pear-ep-admin
 
-## 简介
+#### 简介
 
 `pear-ep-admin` 是一款开源免费的中后台管理系统模版, 使用最新的 `Vue3`、`Vite`、`Ts`、`element-plus`、`Pinia`、`tailwindcss` 等主流技术开发
 
@@ -27,7 +27,7 @@
   <img alt="pear-ep-admin" width="100%" src="https://github.com/pear-ep-admin/blob/master/src/assets/readme/admin-5.png">
 </p> -->
 
-## 安装使用
+#### 安装使用
 
 - 获取项目代码
 
@@ -63,10 +63,10 @@ pnpm run build:pro
 
 #### todo-list
 
-- [ ] 集成 ESLint StyleLint
 - [ ] 多种布局模式
+- [ ] 页脚, 侧边栏反转色, 头部反转色
+- [ ] 集成 ESLint StyleLint
 - [ ] 暗黑模式 变量使用方式 优化
-- [ ] 开发图片标注工具
 
 #### 支持
 
