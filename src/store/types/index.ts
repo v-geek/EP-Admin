@@ -31,6 +31,7 @@ export interface SystemState {
   weakMode: boolean
   enableMainLoading: boolean
   mainLoading: boolean
+  footer: boolean
 }
 
 export interface PermissState {

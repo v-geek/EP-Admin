@@ -95,6 +95,11 @@
         <span>切换loading</span>
         <el-switch v-model="enableMainLoading" />
       </div>
+
+      <div>
+        <span>页脚</span>
+        <el-switch v-model="footer" />
+      </div>
     </div>
   </el-drawer>
 </template>
@@ -113,7 +118,7 @@ const { changeTheme, changeGrayOrWeak } = useTheme()
 
 const showDrawer = ref(false)
 
-const { layout, themeColor, menuAccordion, grayMode, weakMode, enableMainLoading } =
+const { layout, themeColor, menuAccordion, grayMode, weakMode, enableMainLoading, footer } =
   storeToRefs(systemStore)
 
 const colorList = ref(['#1890ff', '#ff4500', '#ff8c00', '#ffd700', '#90ee90', '#00ced1', '#c71585'])

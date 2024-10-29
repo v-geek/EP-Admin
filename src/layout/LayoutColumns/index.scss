@@ -109,18 +109,5 @@ $menuBoxHeight: calc(100vh - $headerHeight);
     height: 100vh;
     flex: 1;
     min-width: 0;
-
-    > .header {
-      background-color: #ffffff;
-      height: $headerHeight;
-      padding: 0;
-    }
-
-    > .content {
-      flex: 1;
-      background-color: $mainBgColor;
-      // 防止切换路由时出现 x y 轴的滚动条
-      overflow-x: hidden;
-    }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex-between">
+  <div class="header flex-between">
     <div class="flex items-center">
       <Collapse />
       <Breadcrumb />
@@ -72,3 +72,11 @@ function onClick(key: string) {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.header {
+  background-color: #ffffff;
+  height: $headerHeight;
+  padding: 0;
+}
+</style>

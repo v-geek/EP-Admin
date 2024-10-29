@@ -44,19 +44,9 @@
     </div>
 
     <div class="right-layout">
-      <div class="header">
-        <Header />
-      </div>
-
+      <Header />
       <Tabs />
-
-      <div
-        class="content"
-        :style="{ padding: !route.meta?.mainFull ? '16px' : 0 }"
-        v-loading="enableMainLoading && mainLoading"
-      >
-        <Main />
-      </div>
+      <Main />
     </div>
   </div>
 </template>

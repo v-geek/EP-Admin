@@ -27,19 +27,9 @@
     </div>
 
     <div class="right-layout">
-      <div class="header">
-        <Header />
-      </div>
-
+      <Header />
       <Tabs />
-
-      <div
-        class="content"
-        :style="{ padding: !route.meta?.mainFull ? '16px' : 0 }"
-        v-loading="enableMainLoading && mainLoading"
-      >
-        <Main />
-      </div>
+      <Main />
     </div>
   </div>
 </template>
@@ -66,7 +56,7 @@ const route = useRoute()
 
 const systemStore = useSystemStore()
 
-const { isDark, menuAccordion, enableMainLoading, mainLoading } = storeToRefs(systemStore)
+const { isDark, menuAccordion } = storeToRefs(systemStore)
 
 const isCollapse = computed(() => systemStore.sideBar.isCollapse)
 const sideBarWidth = computed(() => (isCollapse.value ? '64px' : '210px'))
