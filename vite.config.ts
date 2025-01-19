@@ -44,9 +44,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
           additionalData: `
             @use "@/styles/variable.scss" as *;
             @use "@/styles/mixin.scss" as *;
-          `,
-          // 解决警告 Deprecation Warning: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
-          api: 'modern-compiler' // or 'modern'
+          `
         }
       }
     },

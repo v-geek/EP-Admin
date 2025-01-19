@@ -8,13 +8,16 @@
 
 [点我预览](https://pear1958.github.io/pear-ep-admin)
 
+#### Node版本
+
+- 开发时使用的是19.1.0
+- 说明: lint-staged v15 版本需要 Node大于18.12.0 https://github.com/lint-staged/lint-staged
+
 #### 登录相关
 
 - 开发中...
 - 账号: admin
 - 密码: 123456
-
-- 说明: lint-staged v15 版本需要 Node大于18.12.0 https://github.com/lint-staged/lint-staged
 
 <!-- #### 项目截图
 
