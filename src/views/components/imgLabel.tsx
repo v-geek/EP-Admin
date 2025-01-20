@@ -1,18 +1,19 @@
 import { defineComponent } from 'vue'
-import { openDialog, closeDialog } from '@/utils/dialog'
+import { showDialog, closeDialog } from '@/utils/dialog'
 
 export default defineComponent({
   name: 'imgLabel',
   setup() {
     const handleClick = () => {
-      openDialog(<div onClick={closeDialog}>关闭</div>, {
+      showDialog(<div onClick={closeDialog}>关闭</div>, {
         title: '标题',
-        width: '500',
-        onClosed: () => {
-          // console.log('closed')
-        }
+        width: '500'
       })
     }
-    return () => <div onClick={handleClick}>内容</div>
+    return () => (
+      <el-button type="primary" onClick={handleClick}>
+        打开弹窗
+      </el-button>
+    )
   }
 })
