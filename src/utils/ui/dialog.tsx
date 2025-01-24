@@ -1,6 +1,6 @@
 import { ref, render } from 'vue'
-import { genUUID } from 'pear-common-utils'
 import { type DialogProps, ElDialog, ElButton } from 'element-plus'
+import { genUUID } from 'pear-common-utils'
 
 /**
  * 弹窗不显示时, 弹窗内的生命周期不会执行

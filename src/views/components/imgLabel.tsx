@@ -1,19 +1,33 @@
 import { defineComponent } from 'vue'
-import { showDialog, closeDialog } from '@/utils/dialog'
+import { showDialog, closeDialog } from '@/utils/ui/dialog'
+import { showLoading, closeLoading } from '@/utils/ui/loading'
 
 export default defineComponent({
   name: 'imgLabel',
   setup() {
-    const handleClick = () => {
+    const openDialog = () => {
       showDialog(<div onClick={closeDialog}>关闭</div>, {
         title: '标题',
         width: '500'
       })
     }
+
+    const openLoading = () => {
+      showLoading()
+      setTimeout(() => {
+        closeLoading()
+      }, 3000)
+    }
+
     return () => (
-      <el-button type="primary" onClick={handleClick}>
-        打开弹窗
-      </el-button>
+      <div>
+        <el-button type="primary" onClick={openDialog}>
+          打开弹窗
+        </el-button>
+        <el-button type="primary" onClick={openLoading}>
+          Loading(3s后自动关)
+        </el-button>
+      </div>
     )
   }
 })
