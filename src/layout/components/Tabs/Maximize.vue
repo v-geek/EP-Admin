@@ -29,19 +29,16 @@ function changeClass(method: 'add' | 'remove') {
 .main-maximize {
   .sider,
   .header,
-  .tabs-box {
+  .tabs-box,
+  .footer {
     display: none !important;
   }
 
   // Main主体部分
-  .right-layout {
-    .content {
-      margin-top: 0 !important;
-      min-height: 100vh !important;
-    }
-
-    .main {
-      min-height: calc(100vh - 32px) !important;
+  .right-layout,
+  .tabs-main {
+    > .main {
+      min-height: calc(100vh - 32px);
     }
   }
 }

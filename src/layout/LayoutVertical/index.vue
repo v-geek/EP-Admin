@@ -35,45 +35,19 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { RouteRecordRaw, useRoute, useRouter } from 'vue-router'
-import { storeToRefs } from 'pinia'
-import { filterMenuData } from '@/router/utils'
-import useSystemStore from '@/store/modules/system'
-import usePermissionStore from '@/store/modules/permission'
 import SubMenu from '../components/SubMenu/index.vue'
 import Header from '../components/Header/index.vue'
 import Tabs from '../components/Tabs/index.vue'
 import Main from '../components/Main/index.vue'
 import LogoSvg from '@/assets/imgs/logo.svg?component'
+import { useMenu } from '@/hooks/useMenu'
 
 defineOptions({
   name: 'LayoutVertical'
 })
 
-const router = useRouter()
-const route = useRoute()
-
-const systemStore = useSystemStore()
-
-const { isDark, menuAccordion } = storeToRefs(systemStore)
-
-const isCollapse = computed(() => systemStore.sideBar.isCollapse)
-const sideBarWidth = computed(() => (isCollapse.value ? '64px' : '210px'))
-const activeKey = computed(() => route.path)
-const menuData = computed(() => filterMenuData(usePermissionStore().menuList))
-
-function handleClick(key: string) {
-  // 获取点击的路由
-  const clickRoute = router.getRoutes().find(item => item.path === key) as RouteRecordRaw
-
-  // 外部链接
-  if (clickRoute.meta?.link) {
-    return window.open(clickRoute.meta?.link as string, '_blank')
-  }
-
-  router.push(key)
-}
+const { isDark, menuAccordion, isCollapse, sideBarWidth, activeKey, menuData, handleClick } =
+  useMenu()
 </script>
 
 <style lang="scss" scoped>

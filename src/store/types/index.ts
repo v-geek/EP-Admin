@@ -18,6 +18,7 @@ export interface SystemState {
   layout: LayoutType
   sideBar: {
     isCollapse: boolean
+    width: '64px' | '210px'
   }
   keepAliveNameList: string[]
   tabList: TabList
@@ -31,7 +32,7 @@ export interface SystemState {
   weakMode: boolean
   enableMainLoading: boolean
   mainLoading: boolean
-  footer: boolean
+  showFooter: boolean
 }
 
 export interface PermissState {

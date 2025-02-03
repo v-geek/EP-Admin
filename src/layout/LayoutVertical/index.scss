@@ -1,5 +1,6 @@
 .layout-box {
   display: flex;
+  width: 100vw;
   // 解决关闭全屏时, Y轴出现滚动条
   height: 100vh;
   overflow: hidden;
@@ -24,45 +25,6 @@
         font-size: 21.5px;
         font-weight: bold;
         color: #dadada;
-      }
-    }
-
-    :deep(.menu) {
-      height: calc(100vh - $headerHeight);
-
-      .el-menu {
-        border-right: none;
-
-        > .el-menu-item,
-        .el-sub-menu__title {
-          height: 50px;
-          line-height: 50px;
-        }
-      }
-
-      .el-sub-menu .el-menu-item {
-        background-color: #0c2135 !important;
-      }
-
-      .el-menu--vertical .el-menu .el-sub-menu__title {
-        background-color: #0c2135 !important;
-      }
-
-      .el-menu-item:hover {
-        color: #ffffff;
-      }
-
-      .el-menu-item.is-active {
-        background-color: var(--el-color-primary) !important;
-      }
-
-      // 解决菜单收起图标不显示的bug
-      .el-menu--collapse {
-        .el-menu-tooltip__trigger,
-        .el-sub-menu__title {
-          padding: 0;
-          justify-content: center;
-        }
       }
     }
   }

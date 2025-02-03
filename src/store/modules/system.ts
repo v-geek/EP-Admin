@@ -11,7 +11,8 @@ const useSystemStore = defineStore({
     layout: 'vertical',
     sideBar: {
       // 是否折叠菜单
-      isCollapse: false
+      isCollapse: false,
+      width: '210px'
     },
     // 以route.name作为缓存的Key
     keepAliveNameList: [],
@@ -28,11 +29,12 @@ const useSystemStore = defineStore({
     weakMode: false,
     enableMainLoading: false,
     mainLoading: false,
-    footer: true
+    showFooter: true
   }),
   actions: {
     setCollapse(value: boolean) {
       this.sideBar.isCollapse = value
+      this.sideBar.width = value ? '64px' : '210px'
     },
     findIndex(name: string) {
       return this.keepAliveNameList.findIndex(item => item === name)

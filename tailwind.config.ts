@@ -11,7 +11,8 @@ export default {
     extend: {
       // 添加颜色  eg: text-primary
       colors: {
-        dark: '#1f1f1f',
+        dark: '#1f1f1f', // 内容区域暗黑色
+        'dark-el': '#141414', // 布局区域暗黑色
         primary: 'var(--el-color-primary)',
         'base-color': 'var(--el-text-color-primary)'
       }

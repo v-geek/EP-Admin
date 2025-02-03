@@ -1,6 +1,6 @@
 <template>
   <div
-    class="main"
+    class="main dark:!bg-dark-el"
     :style="{ padding: !route.meta?.mainFull ? '16px' : 0 }"
     v-loading="enableMainLoading && mainLoading"
   >
@@ -13,7 +13,7 @@
     </router-view>
   </div>
 
-  <Footer v-if="footer" />
+  <Footer v-if="showFooter" />
 </template>
 
 <script lang="ts" setup>
@@ -25,7 +25,8 @@ import useSystemStore from '@/store/modules/system'
 import Footer from '../Footer/index.vue'
 
 const route = useRoute()
-const { keepAliveNameList, enableMainLoading, mainLoading, footer } = storeToRefs(useSystemStore())
+const { keepAliveNameList, enableMainLoading, mainLoading, showFooter } =
+  storeToRefs(useSystemStore())
 
 const routerShow = ref(true)
 
