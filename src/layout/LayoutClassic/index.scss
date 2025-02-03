@@ -3,7 +3,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  // overflow-y: hidden;
   overflow: hidden;
 
   .header-box {
@@ -32,6 +31,10 @@
       flex-shrink: 0;
       background-color: #001529;
       transition: all 0.2s;
+
+      .menu {
+        height: calc(100vh - $headerHeight);
+      }
     }
 
     .tabs-main {
