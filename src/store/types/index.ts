@@ -8,7 +8,7 @@ export interface UserInfo {
   [key: string]: any
 }
 
-export type LayoutType = 'classic' | 'vertical' | 'columns' | 'mix'
+export type LayoutType = 'vertical' | 'classic' | 'columns' | 'mix'
 
 export type ComponentSize = 'small' | 'default' | 'large'
 
@@ -33,6 +33,7 @@ export interface SystemState {
   enableMainLoading: boolean
   mainLoading: boolean
   showFooter: boolean
+  showBreadcrumb: boolean
 }
 
 export interface PermissState {

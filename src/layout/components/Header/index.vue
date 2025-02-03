@@ -1,8 +1,8 @@
 <template>
   <div class="header flex-between">
     <div class="flex items-center">
-      <Collapse />
-      <Breadcrumb />
+      <Collapse v-if="showCollapse" />
+      <Breadcrumb v-if="showBreadcrumb" />
     </div>
 
     <div class="flex-c pr-1.5">
@@ -42,6 +42,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
 import { ElMessage } from 'element-plus'
 import Collapse from './components/Collapse.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
@@ -53,7 +55,14 @@ import Lock from './components/Lock.vue'
 import I18nIcon from './components/I18nIcon.vue'
 import emitter from '@/utils/mitt'
 import useUserStore from '@/store/modules/user'
+import useSystemStore from '@/store/modules/system'
 import avatarUrl from '@/assets/imgs/avatar.jpg'
+
+const systemStore = useSystemStore()
+
+const { showBreadcrumb, layout } = storeToRefs(systemStore)
+
+const showCollapse = computed(() => layout.value !== 'classic')
 
 const openSetDrawer = () => {
   emitter.emit('openSetDrawer')

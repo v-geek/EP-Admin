@@ -11,6 +11,8 @@
     @include flex(space-between);
 
     .logo {
+      padding-left: 24px;
+
       span {
         margin-left: 6px;
         font-size: 21.5px;
@@ -31,9 +33,15 @@
       flex-shrink: 0;
       background-color: #001529;
       transition: all 0.2s;
-
       .menu {
-        height: calc(100vh - $headerHeight);
+        height: calc(100vh - $headerHeight - 40px);
+      }
+      .collapse-wrap {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        color: var(--el-color-primary);
+        box-shadow: 0 0 6px -3px var(--el-color-primary);
       }
     }
 

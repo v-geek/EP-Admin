@@ -1,9 +1,9 @@
 <template>
   <div class="layout-box">
     <div class="header-box dark:!bg-dark-el">
-      <div class="logo flex-c" :style="{ width: sideBarWidth }">
+      <div class="logo flex-c">
         <LogoSvg />
-        <span v-show="!isCollapse" class="dark:!text-[#dadada]">Ep-Admin</span>
+        <span class="dark:!text-[#dadada]">梨子SaaS管理系统</span>
       </div>
       <div class="flex-1">
         <Header />
@@ -14,6 +14,9 @@
       <div class="sider" id="sider" :style="{ width: sideBarWidth }">
         <div class="menu">
           <Menu />
+        </div>
+        <div class="collapse-wrap">
+          <Collapse />
         </div>
       </div>
 
@@ -31,6 +34,7 @@ import Header from '../components/Header/index.vue'
 import Tabs from '../components/Tabs/index.vue'
 import Main from '../components/Main/index.vue'
 import Menu from '../components/Menu/index.vue'
+import Collapse from '../components/Header/components/Collapse.vue'
 import LogoSvg from '@/assets/imgs/logo.svg?component'
 import useSystemStore from '@/store/modules/system'
 
@@ -39,9 +43,7 @@ defineOptions({
 })
 
 const systemStore = useSystemStore()
-
 const sideBarWidth = computed(() => systemStore.sideBar.width)
-const isCollapse = computed(() => systemStore.sideBar.isCollapse)
 </script>
 
 <style lang="scss" scoped>

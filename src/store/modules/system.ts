@@ -29,7 +29,8 @@ const useSystemStore = defineStore({
     weakMode: false,
     enableMainLoading: false,
     mainLoading: false,
-    showFooter: true
+    showFooter: true,
+    showBreadcrumb: true
   }),
   actions: {
     setCollapse(value: boolean) {

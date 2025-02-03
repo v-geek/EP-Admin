@@ -87,6 +87,11 @@
       <el-divider>界面设置</el-divider>
 
       <div>
+        <span>面包屑</span>
+        <el-switch v-model="showBreadcrumb" />
+      </div>
+
+      <div>
         <span>菜单手风琴</span>
         <el-switch v-model="menuAccordion" />
       </div>
@@ -118,8 +123,16 @@ const { changeTheme, changeGrayOrWeak } = useTheme()
 
 const showDrawer = ref(false)
 
-const { layout, themeColor, menuAccordion, grayMode, weakMode, enableMainLoading, showFooter } =
-  storeToRefs(systemStore)
+const {
+  layout,
+  themeColor,
+  menuAccordion,
+  grayMode,
+  weakMode,
+  enableMainLoading,
+  showFooter,
+  showBreadcrumb
+} = storeToRefs(systemStore)
 
 const colorList = ref(['#1890ff', '#ff4500', '#ff8c00', '#ffd700', '#90ee90', '#00ced1', '#c71585'])
 
