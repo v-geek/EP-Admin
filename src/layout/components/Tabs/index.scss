@@ -24,8 +24,12 @@
       .el-tabs__item {
         height: calc($tabHeight - 4px);
         font-size: 12px;
-        border: 1px solid var(--el-border-color-light);
+        border-top: 1px solid var(--el-border-color-light);
+        border-left: 1px solid var(--el-border-color-light);
+        border-right: 1px solid var(--el-border-color-light);
+        border-radius: 6px 6px 0 0;
         margin: 0 3px;
+        // box-sizing: border-box;
 
         &.is-active {
           background-color: var(--el-color-primary);
