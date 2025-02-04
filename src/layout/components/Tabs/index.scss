@@ -5,7 +5,7 @@
   transition: all 0.2s;
   @include flex(space-between);
   background-color: #ffffff;
-  padding: 1px 0;
+  padding-top: 2px;
   border-top: 1px solid var(--el-border-color-light);
   border-bottom: 1px solid var(--el-border-color-light);
 
