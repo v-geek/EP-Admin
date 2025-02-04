@@ -1,19 +1,18 @@
 html.dark {
-  $bg-color: var(--el-bg-color); // #141414
   $border-color: var(--el-border-color-light);
-  $text-color: var(--el-text-color-primary); // #E5EAF3
+  $text-color: var(--el-text-color-primary); // #e5eaf3
 
   .layout-box,
   .header,
   .tabs-box {
-    background-color: $bg-color !important;
+    background-color: var(--pear-dark-2) !important;
   }
 
   #sider {
-    background-color: #1f1f1f !important;
+    background-color: var(--pear-dark-1) !important;
 
     > .logo {
-      background-color: #1f1f1f !important;
+      background-color: var(--pear-dark-1) !important;
     }
 
     // 菜单栏暗黑模式适配
@@ -28,7 +27,7 @@ html.dark {
   }
 
   .page-box {
-    background-color: $bg-color !important;
+    background-color: var(--pear-dark-2) !important;
   }
 
   .tabs-box {

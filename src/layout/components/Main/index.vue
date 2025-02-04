@@ -1,6 +1,6 @@
 <template>
   <div
-    class="main dark:!bg-dark-el"
+    class="main dark:!bg-dark-2"
     :style="{ padding: !route.meta?.mainFull ? '16px' : 0 }"
     v-loading="enableMainLoading && mainLoading"
   >

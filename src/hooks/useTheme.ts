@@ -1,6 +1,7 @@
 import { storeToRefs } from 'pinia'
 import { getDarkColor, getLightColor } from 'pear-common-utils'
 import useSystemStore from '@/store/modules/system'
+import commonTheme from '@/styles/theme'
 
 export function useTheme() {
   const systemStore = useSystemStore()
@@ -10,6 +11,12 @@ export function useTheme() {
     const html = document.documentElement as HTMLElement
     html.classList[dark ? 'add' : 'remove']('dark')
     systemStore.setState('isDark', dark)
+    // 设置全局颜色
+    const type = dark ? 'dark' : 'light'
+    const theme = commonTheme[type]
+    for (const [key, value] of Object.entries(theme)) {
+      document.documentElement.style.setProperty(key, value as string)
+    }
   }
 
   const changeTheme = (color: string) => {

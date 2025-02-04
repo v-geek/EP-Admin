@@ -1,6 +1,6 @@
 <template>
   <div class="layout-box">
-    <div class="header-box dark:!bg-dark-el">
+    <div class="header-box dark:!bg-dark-2">
       <div class="logo flex-c">
         <LogoSvg />
         <span class="dark:!text-[#dadada]">梨子SaaS管理系统</span>
