@@ -3,6 +3,7 @@ import { resolve } from 'path'
 import { formatEnv } from './src/utils/env'
 import { getPlugins } from './build/plugins'
 import { include, exclude } from './build/optimize'
+import { __APP_INFO__ } from './build/utils'
 
 const pathSrc = resolve(__dirname, 'src')
 
@@ -69,6 +70,9 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
           assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
         }
       }
+    },
+    define: {
+      __APP_INFO__: JSON.stringify(__APP_INFO__)
     }
   }
 }
