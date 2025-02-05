@@ -16,6 +16,8 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
   const viteEnv = formatEnv(env)
 
   return {
+    // 自动将所有静态资源路径调整为包含该前缀, 包括 HTML、CSS、JavaScript 和图片等
+    // import logo from './assets/logo.png' -> logo: /my-app/assets/logo.png
     base: env.VITE_PUBLIC_PATH,
     resolve: {
       alias: {
