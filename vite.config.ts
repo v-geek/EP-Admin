@@ -1,9 +1,8 @@
 import { type ConfigEnv, type UserConfigExport, loadEnv } from 'vite'
 import { resolve } from 'path'
-import { formatEnv } from './src/utils/env'
+import { formatEnv, __APP_INFO__ } from './build/utils'
 import { getPlugins } from './build/plugins'
 import { include, exclude } from './build/optimize'
-import { __APP_INFO__ } from './build/utils'
 
 const pathSrc = resolve(__dirname, 'src')
 
@@ -17,7 +16,7 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
   const viteEnv = formatEnv(env)
 
   return {
-    base: './',
+    base: env.VITE_PUBLIC_PATH,
     resolve: {
       alias: {
         '@': pathSrc

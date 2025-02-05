@@ -45,7 +45,7 @@ onBeforeMount(() => {
         // 5分钟检测一次版本
         pollingTime: 300000,
         localPackageVersion: version,
-        originVersionFileUrl: `${location.origin}/version.json`
+        originVersionFileUrl: `${location.origin}${VITE_PUBLIC_PATH}version.json`
       },
       {
         title: name,
