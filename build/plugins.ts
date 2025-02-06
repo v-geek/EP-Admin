@@ -6,11 +6,11 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import svgLoader from 'vite-svg-loader'
 import viteCompression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
+import { webUpdateNotice } from '@plugin-web-update-notification/vite'
 import { viteBuildInfo } from './info'
 
 export const getPlugins = (viteEnv: ViteEnv): PluginOption[] => {
   const { VITE_TITLE, VITE_OPEN_GZIP } = viteEnv
-
   return [
     vue(),
     vueJsx(),
@@ -36,6 +36,16 @@ export const getPlugins = (viteEnv: ViteEnv): PluginOption[] => {
         threshold: 10240, // 体积大于 threshold 才会被压缩, 单位b  10kb
         algorithm: 'gzip', // 压缩算法
         ext: '.gz' // 生成的压缩后缀
-      })
+      }),
+    webUpdateNotice({
+      logVersion: true,
+      versionType: 'build_timestamp',
+      notificationProps: {
+        title: 'pear-ep-admin',
+        description: '检测到新版本',
+        buttonText: '刷新',
+        dismissButtonText: '忽略'
+      }
+    })
   ]
 }

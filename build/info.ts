@@ -4,7 +4,7 @@ import gradientString from 'gradient-string'
 import boxen, { type Options as BoxenOptions } from 'boxen'
 
 // 青色 - 品红色
-const startMsg = gradientString('cyan', 'magenta').multiline(`欢迎使用 Pear-Ep-Admin`)
+const startMsg = gradientString('cyan', 'magenta').multiline('欢迎使用 Pear-Ep-Admin')
 
 const boxenOptions: BoxenOptions = {
   padding: 0.5,

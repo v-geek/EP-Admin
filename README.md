@@ -1,5 +1,9 @@
 ## pear-ep-admin
 
+#### 私活
+
+- 有私活的老板, 欢迎骚扰
+
 #### 简介
 
 `pear-ep-admin` 是一款开源免费的中后台管理系统模版, 使用最新的 `Vue3`、`Vite`、`Ts`、`element-plus`、`Pinia`、`tailwindcss` 等主流技术开发
