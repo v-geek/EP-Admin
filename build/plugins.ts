@@ -37,11 +37,12 @@ export const getPlugins = (viteEnv: ViteEnv): PluginOption[] => {
         algorithm: 'gzip', // 压缩算法
         ext: '.gz' // 生成的压缩后缀
       }),
+    // 打包后请求 web_version_by_plugin.json 文件的代码加了 ?t=${Date.now()} 参数
     webUpdateNotice({
       logVersion: true,
       versionType: 'build_timestamp',
       notificationProps: {
-        title: 'pear-ep-admin',
+        title: VITE_TITLE,
         description: '检测到新版本',
         buttonText: '刷新',
         dismissButtonText: '忽略'

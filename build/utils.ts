@@ -1,5 +1,4 @@
 import dayjs from 'dayjs'
-
 import { name, version } from '../package.json'
 
 const __APP_INFO__ = {
