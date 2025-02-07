@@ -11,7 +11,6 @@ export const include = [
   '@element-plus/icons-vue',
   '@wangeditor/editor',
   '@wangeditor/editor-for-vue',
-  'animate.css',
   'axios',
   'cropperjs',
   'dayjs',

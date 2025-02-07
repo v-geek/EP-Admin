@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import pinia from './store'
+import microApp from '@micro-zoe/micro-app'
 
 import { setupElementPlus } from '@/plugins/elementPlus'
 
@@ -33,5 +34,7 @@ app.config.errorHandler = errorHandler
 
 registerGlobComp(app)
 setupElementPlus(app)
+
+microApp.start()
 
 app.use(router).use(directives).use(pinia).use(i18n).mount('#app')
