@@ -36,12 +36,6 @@
 
 #### 安装使用
 
-- 获取项目代码
-
-```
-git clone git@github.com:pear1958/pear-ep-admin.git
-```
-
 - 安装依赖
 
 ```
