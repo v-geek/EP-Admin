@@ -14,9 +14,6 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.1.0
         version: 2.3.1(vue@3.5.13(typescript@4.9.5))
-      '@micro-zoe/micro-app':
-        specifier: 1.0.0-rc.20
-        version: 1.0.0-rc.20
       '@vue-office/docx':
         specifier: 1.6.0
         version: 1.6.0(vue-demi@0.14.10(vue@3.5.13(typescript@4.9.5)))(vue@3.5.13(typescript@4.9.5))
@@ -601,9 +598,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
-
-  '@micro-zoe/micro-app@1.0.0-rc.20':
-    resolution: {integrity: sha512-RFTPoTnHfTPEeXCF0V8X0i4mkn+d0ecnn29SqQKXz3O34pQ/6F6OAeFWJ0xFHVE2uwK5ldt34oIJWUAl/vsiVw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4266,8 +4260,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
-
-  '@micro-zoe/micro-app@1.0.0-rc.20': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
